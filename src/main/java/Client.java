@@ -12,7 +12,7 @@ public class Client {
 
     public Client() throws IOException {
         Properties props = new Properties();
-        props.load(new FileInputStream(new File("C:\\Workspace_Java\\ChatNetwork_Lesson\\settings.txt")));
+        props.load(new FileInputStream(new File("./src/main/resources/settings.txt")));
         int SERVER_PORT = Integer.parseInt(props.getProperty("SERVER_PORT"));
         try {
             String address = "localhost";

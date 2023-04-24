@@ -12,7 +12,7 @@ public class AppTest {
     @Test
     public void testWriteMsg() throws IOException {
         String msg = "Test message";
-        File file = new File("C:\\Workspace_Java\\ChatNetwork_Lesson\\file.log");
+        File file = new File("./src/main/resources/file.log");
         long beforeLength = file.length();
         Server.writeFileServer(msg);
         long afterLength = file.length();

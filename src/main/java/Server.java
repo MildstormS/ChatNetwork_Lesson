@@ -19,7 +19,7 @@ public class Server extends Thread{
 
     public static void main(String[] args) throws IOException {
         Properties props = new Properties();
-        props.load(new FileInputStream(new File("C:\\Workspace_Java\\ChatNetwork_Lesson\\settings.txt")));
+        props.load(new FileInputStream(new File("./src/main/resources/settings.txt")));
         int SERVER_PORT = Integer.parseInt(props.getProperty("SERVER_PORT"));
 
         try (ServerSocket server = new ServerSocket(SERVER_PORT)) {
@@ -93,7 +93,7 @@ public class Server extends Thread{
     }
 
     protected static void writeFileServer(String msg) {
-        try (FileWriter writer = new FileWriter("C:\\Workspace_Java\\ChatNetwork_Lesson\\file.log", true)) {
+        try (FileWriter writer = new FileWriter("./src/main/resources/file.log", true)) {
             writer.append(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(Calendar.getInstance().getTime()))
                     .append(" ")
                     .append(msg)
